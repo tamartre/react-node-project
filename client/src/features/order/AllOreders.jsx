@@ -19,8 +19,6 @@ const AllOrders = () => {
     
     return (
         <>
-         {/* <Button onClick={Home} label="Home" severity="success" raised />
-            <br></br><br></br> */}
         <div className="card">
             <DataTable value={allOrders} tableStyle={{ minWidth: '40rem' }}>
                 <Column field="user" header="user"></Column>

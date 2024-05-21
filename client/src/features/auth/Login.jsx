@@ -85,7 +85,7 @@ const Login = () => {
     return (
         <div className="card flex justify-content-center">
 
-            {/* //<Button onClick={register}label="Update Details" severity="success" raised/> */}
+         
             <Dialog
                 visible={visible}
                 modal

@@ -11,7 +11,6 @@ const Logout = () => {
     const navigate = useNavigate()
     const accept = () => {
         dispatch(removeToken())
-        // dispatch(apiSlice.util.resetApiState())
         navigate("/")
     }
     const confirm = (event) => {

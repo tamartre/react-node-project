@@ -40,11 +40,6 @@ const UpdateUser = ({ user }) => {
             userName: user ? user.userName : "",
             name: user ? user.name : "",
             email: user ? user.email : "",
-            address: user ? user.address : "",
-            // street: user ? user.address.street : "",
-            // city: user ? user.address.city : "",
-            // buildNumber: user ? user.address.buildNumber : "",
-            // zipCode: user ? user.address.zipCode : "",
             phone: user ? user.phone : 0
 
         },

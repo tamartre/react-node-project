@@ -24,7 +24,6 @@ const UpdateProd = ({product}) => {
     const[updateProductItem]=useUpdateProductItemMutation() 
     const updateProd = () => {
         setVisible(true)
-        //updateProductItem(product)
 
     }
 

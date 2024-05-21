@@ -38,7 +38,6 @@ const getProductById = async (req, res) => {
 
 const updateProduct = async (req, res) => {
 
-    //just manager can do!!
     if (req.user.roles != "manager")
     return res.status(401).json({ message: 'Unauthorized' })
 

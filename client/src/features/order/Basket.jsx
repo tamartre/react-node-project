@@ -104,7 +104,7 @@ const Basket = () => {
                 </div>
                 <Button icon="pi pi-heart" rounded severity="help" aria-label="Favorite" />
                 <Button icon="pi pi-times" rounded severity="danger" aria-label="Cancel" onClick={() => handleDelete(item)} />
-                {/* <span className="font-bold text-900">${item.price}</span> */}
+               
 
             </div>
         );
@@ -115,7 +115,6 @@ const Basket = () => {
         <>
             <div className="card xl:flex xl:justify-content-center">
                 <OrderList dataKey="id" value={prodList}
-                    // onChange={prodList=e.value} 
                     itemTemplate={itemTemplate} header="MyBasket"></OrderList>
                 {isSuccess ? <Button label={`Overall: ${basket.price} ₪`} severity="help" /> :
                     <Button label="0" severity="help" />}
@@ -132,8 +131,6 @@ const Basket = () => {
                 }
             </div>
             <div className="card flex flex-wrap gap-2 justify-content-center">
-                {/* <Button onClick={handleClick2} label="Update Details" severity="success" raised />
-                <br></br><br></br> */}
 
                 <UpdateUser user={user} />
             </div>

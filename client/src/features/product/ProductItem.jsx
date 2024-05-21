@@ -15,11 +15,9 @@ import { useAddProductMutation } from '../order/ordersApiSlice';
 
 
 const ProductItem = () => {
-    // const { productId } = useParams()
     const [searchParams, setSearchParams] = useSearchParams();
     const productId = searchParams.get('producId')
     const { data: product, isLoading, isSuccess, isError, error } = useGetProductByIdQuery(productId)
-    //const { data: addProduct } = useGetProductByIdQuery(productId)
 
 
     const [images, setImages] = useState([]);
@@ -27,8 +25,6 @@ const ProductItem = () => {
     const [describtion, setDescribtion] = useState("");
     const [price, setPrice] = useState(0);
     const navigate = useNavigate()
-
-    // const { count, increment, decrement, reset } = useCounter(1, { min: 0});
     const { count, increment, decrement, reset } = useCounter(1, { step: 1, min: 0 });
     const [addProduct] = useAddProductMutation()
     const [visible, setVisible] = useState(false);
@@ -75,12 +71,10 @@ const ProductItem = () => {
     ];
     const itemTemplate = (item) => {
         return <img src={`${item}`} alt={item.alt} style={{ width: '100%', height: '400px' }} />
-        //return <img src={"../../../public/aa/11.jpg"} alt={item.alt} style={{ width: '100%' }} />
     }
 
     const thumbnailTemplate = (item) => {
         return <img src={`${item}`} alt={item.alt} style={{ maxHeight: '100px', maxHeight: '100px' }} />
-        //return <img src={"../../../public/aa/11.jpg"} alt={item.alt} />
     }
 
     return (
@@ -96,14 +90,6 @@ const ProductItem = () => {
             <h2 style={{ fontFamily: "cursive", color: "orange", fontSize: '35px' }}>price: {price} ₪</h2>
 
 
-            {/* <div className="card flex flex-column align-items-center">
-                <span style={{ fontFamily: "cursive", color: "orange", fontSize: '50px' }} className="font-bold text-4xl mb-5">{"count " + count}</span> */}
-            {/* <div className="flex flex-wrap gap-3">
-                    <Button style={{ borderColor: "black", backgroundColor: "orange" }} icon="pi pi-plus" className="p-button-outlined p-button-rounded" onClick={increment}></Button>
-                    <Button style={{ borderColor: "black", backgroundColor: "orange" }} icon="pi pi-minus" className="p-button-outlined p-button-rounded" onClick={decrement}></Button>
-                    <Button icon="pi pi-times" className="p-button-outlined p-button-rounded p-button-danger" onClick={reset}></Button> 
-                </div> */}
-            {/* </div> */}
             <div className="card flex justify-content-center">
                 <Button style={{ borderColor: "black", backgroundColor: "orange", color: "black" }} onClick={() => handleClickAddToBasket()} label="Add to basket" />
             </div>

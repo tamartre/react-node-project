@@ -2,9 +2,6 @@ const User = require("../models/User")
 
 const createNewUser = async (req, res) => {
 
-    //just manager
-    // if (req.user.roles != "manager")
-    //     return res.status(401).json({ message: 'Unauthorized' })
 
     const { userName, password, name, email, phone, roles, address } = req.body
     if (!userName || !password) {
@@ -13,8 +10,6 @@ const createNewUser = async (req, res) => {
     const UserNameArr = (await User.find().lean()).map(e => { e.userName })
     if (UserNameArr.includes(userName))
         return res.status(201).json("userName must be unique");
-    // const checkUser = await User.find().map(use => use.userName)
-    // if (checkUser.includes(userName)) return res.status(400).send("userName is invalid!!")
     const user = await User.create({ userName, password, name, email, phone, roles, address })
     return res.json(user)
 }
@@ -24,7 +19,6 @@ const getAllUsers = async (req, res) => {
         return res.status(401).json({ message: 'Unauthorized' })
 
     const users = await User.find({}, { password: 0 }).lean()
-    // const users = await User.find().lean()
     if (!users?.length) {
         return res.status(400).json({ message: "no user found" })
     }
@@ -63,9 +57,6 @@ const updateUser = async (req, res) => {
 
 const deleteUser = async (req, res) => {
 
-    //just manager
-    // if (req.user.roles != "manager")
-    //     return res.status(401).json({ message: 'Unauthorized' })
 
     const { id } = req.body
     const user = await User.findById(id).exec()

@@ -24,12 +24,7 @@ const Nav = () => {
     const manager=()=>{
         navigate("/admin")
     }
-    // const handleLogoutClick = () => {
-    //     dispatch(removeToken())
-    //     dispatch(apiSlice.util.resetApiState())
-    //     navigate("/home")
 
-    // }
 
     const itemRenderer = (item) => (
         <a className="flex align-items-center p-menuitem-link">
@@ -68,14 +63,9 @@ const Nav = () => {
         {
             label: 'Basket',
             icon: 'pi pi-cart-plus',
-            // badge: 1,
             template: itemRenderer,
             command: () => navigate("/basket")
         },
-        // {          
-        //     label:<i className="pi pi-spin pi-cog" style={{ fontSize: '2rem' }}></i>
-
-        // },
 
         {
             label: `hello ${name}`,
@@ -96,7 +86,7 @@ const Nav = () => {
             
             {!isUserLoggedIn && <NavLink to="/home" style={{ color: 'white', my: 2 }}>Login</NavLink>}
 
-            {/* {isUserLoggedIn &&<a onClick={handleLogoutClick}>Logout</a>} */}
+          
 
             <div className="card">
                 <Menubar model={items}

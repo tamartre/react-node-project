@@ -80,11 +80,7 @@ const AdminAllProduct = () => {
                     <div className="flex align-items-center justify-content-between">
                         <span className="text-2xl font-semibold">{`₪ ${product.price}`}</span>
                         <UpdateProd product={product} />
-                        {/* <h1>sgdgdgf</h1> */}
                         <Button onClick={() => { deleteProd(product._id) }} icon="pi pi-trash" rounded severity="danger" aria-label="Cancel" />
-                        {/* <Button onClick={()=>handleClick2(product._id)}
-                            icon="pi pi-shopping-cart" 
-                            className="p-button-rounded" ></Button> */}
                     </div>
                 </div>
             </div>

@@ -39,9 +39,6 @@ const Register = () => {
 
     const toast = useRef(null);
 
-    // const show = () => {
-    //     toast.current.show({ severity: 'success', summary: 'product updated', detail: formik.values.value });
-    // };
 
     const formik = useFormik({
 
@@ -72,7 +69,7 @@ const Register = () => {
             return errors;
         },
         onSubmit: async (data) => {
-            //data && show(data);
+
 
         const a= await registerFunc(data)
             if(a.error.data)
@@ -87,7 +84,7 @@ const Register = () => {
     return (
         <div className="card flex justify-content-center">
 
-            {/* //<Button onClick={register}label="Update Details" severity="success" raised/> */}
+           
             <Dialog
                 visible={visible}
                 modal

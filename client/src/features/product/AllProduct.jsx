@@ -59,9 +59,6 @@ const AllProduct = () => {
                     </div>
                     <div className="flex align-items-center justify-content-between">
                         <span className="text-2xl font-semibold">{`₪ ${product.price}`}</span>
-                        {/* <Button onClick={()=>handleClick2(product._id)}
-                            icon="pi pi-shopping-cart" 
-                            className="p-button-rounded" ></Button> */}
                     </div>
                 </div>
             </div>
